@@ -1,0 +1,59 @@
+<div id="trade">
+  <div class="container unsolved" *ngIf="unsolvedPairs.length > 0">
+    <div class="pair_items left">
+      <div
+        *ngFor="let pair of unsolvedPairs"
+        class="item"
+        (mousedown)="leftpartSelected.emit(pair.id)"
+        (click)="assignmentStream.next({ pair: pair, side: 'left' })"
+      >
+        <ng-template
+          [ngTemplateOutlet]="leftpart_temp"
+          [ngTemplateOutletContext]="{
+            contextPair: pair
+          }"
+        >
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="pair_items right">
+      <div
+        *ngFor="let pair of unsolvedPairs"
+        class="item"
+        (mousedown)="rightpartSelected.emit(pair.id)"
+        (click)="assignmentStream.next({ pair: pair, side: 'right' })"
+      >
+        <ng-template
+          [ngTemplateOutlet]="rightpart_temp"
+          [ngTemplateOutletContext]="{
+            contextPair: pair
+          }"
+        >
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div class="container solved" *ngIf="solvedPairs.length > 0">
+    <div *ngFor="let pair of solvedPairs" class="pair">
+      <ng-template
+        [ngTemplateOutlet]="leftpart_temp"
+        [ngTemplateOutletContext]="{
+          contextPair: pair
+        }"
+      >
+      </ng-template>
+
+      <div class="connector"></div>
+
+      <ng-template
+        [ngTemplateOutlet]="rightpart_temp"
+        [ngTemplateOutletContext]="{
+          contextPair: pair
+        }"
+      >
+      </ng-template>
+    </div>
+  </div>
+</div>

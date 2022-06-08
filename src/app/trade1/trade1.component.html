@@ -1,0 +1,19 @@
+<app-learn-trade
+  [pairs]="trades"
+  (leftpartSelected)="onLeftpartSelected($event)"
+  (rightpartSelected)="onRightpartSelected($event)"
+  (leftpartUnselected)="onLeftpartUnselected()"
+  (rightpartUnselected)="onRightpartUnselected()"
+>
+  <ng-template #leftpart let-tradePair="contextPair">
+    <button [class.selected]="leftpartSelectedId == tradePair.id">
+      {{ tradePair.leftpart }}
+    </button>
+  </ng-template>
+
+  <ng-template #rightpart let-tradePair="contextPair">
+    <button [class.selected]="rightpartSelectedId == tradePair.id">
+      {{ tradePair.rightpart }}
+    </button>
+  </ng-template>
+</app-learn-trade>

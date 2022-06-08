@@ -1,0 +1,73 @@
+#trade {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.unsolved {
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.solved {
+  margin-right: 25px;
+}
+
+.pair_items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-bottom: 25px;
+  padding: 25px;
+  background-color: rgb(206, 204, 204);
+  border-radius: 5px;
+  border: 1px solid rgb(255, 0, 21);
+}
+
+.item {
+  margin-right: 10px;
+}
+
+.pair {
+  margin-bottom: 25px;
+}
+
+.connector {
+  height: 5px;
+  background-color: rgb(255, 0, 64);
+}
+
+@media screen and (min-width: 600px) {
+  #trade {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .solved {
+    margin-right: 10px;
+  }
+
+  .pair_items {
+    width: 30%;
+    flex-direction: column;
+  }
+
+  .item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .pair {
+    margin-right: 25px;
+  }
+}
