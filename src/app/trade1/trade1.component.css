@@ -6,4 +6,5 @@ button {
   width: 100%;
   padding: 3px;
   border-color: rgb(0, 110, 255);
+  border-radius: 8px;
 }
